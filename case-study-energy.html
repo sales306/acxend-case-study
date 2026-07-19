@@ -107,6 +107,16 @@
     font-family:'Inter',sans-serif;font-size:13px;color:var(--color-gray-500,#7a8393);
   }
 
+  /* ---- Image-only hero ---- */
+  .cs-hero-image{
+    padding-top:86px;          /* clears the fixed navigation bar */
+  }
+  .cs-hero-image img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+     
   /* ---- Perfectly-centered section body ---- */
   .cs-centered{
     max-width:1040px;
@@ -313,51 +323,22 @@
 <div id="smooth-content">
 <main id="main">
 
-<!-- ============== PAGE HERO ============== -->
-<header class="page-hero page-hero--left" aria-label="Case study introduction">
-  <!-- Cinematic background video: autoplay, muted, loop, playsinline.
-       Fades in once decoded (see backgroundVideoEngine() in js/main.js) so
-       there's no jarring pop-in; poster shows immediately while it loads.
-       NOTE: previously pointed to videos/energy-case-study-hero.mp4 and
-       images/case-study-energy-poster.jpg, which don't exist in the repo —
-       that caused the video container to collapse to 0 height and the next
-       section to render on top of the hero text. Reusing the existing
-       Case-Study-Video.mp4 asset (already used on case-studies.html) fixes
-       the collapse until a dedicated energy-page video is uploaded. -->
-  <div class="page-hero-media" aria-hidden="true">
-    <video
-      class="page-hero-video"
-      autoplay muted loop playsinline
-      preload="auto">
-      <source src="Case-Study-Video.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div class="page-hero-overlay" aria-hidden="true"></div>
-
-  <div class="container page-hero-inner">
-    <div class="page-hero-content">
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <a href="case-studies.html">Case Studies</a>
-        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span aria-current="page">Energy & Battery Storage</span>
-      </nav>
-      <span class="cs-tag reveal">Energy & Battery Storage</span>
-      <h1 class="reveal split-text">Near real-time incident response for a European energy trading and battery storage provider</h1>
-      <p class="page-hero-desc reveal split-text">How aCXend helped an AI-powered energy trading platform turn a manual, delay-prone incident process into a near real-time detection-to-notification workflow.</p>
-      <div class="page-hero-cta reveal">
-        <a href="contact.html" class="btn btn-primary btn-lg">Start a Conversation
-          <svg class="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
+<!-- ============== PAGE HERO (image only) ============== -->
+<section class="cs-hero-image" aria-label="Case study hero">
+  <img
+    src="images/Case%20Study%20-%20Near%20Real-Time%20Incident%20Response%20for%20a%20European%20Energy%20Trading%20and%20Battery%20Storage%20Provider.png"
+    alt="Near Real-Time Incident Response for a European Energy Trading and Battery Storage Provider" />
+</section>
 
 <!-- ============== KEY RESULTS STAT STRIP ============== -->
 <section class="section section--tight section--cloud">
   <div class="container">
+
+    <div class="cs-centered" style="margin-bottom:48px;">
+      <h1 class="reveal split-text">Near Real-Time Incident Response for a European Energy Trading and Battery Storage Provider</h1>
+      <p class="reveal">How aCXend helped an AI-powered energy trading platform turn a manual, delay-prone incident process into a near real-time detection-to-notification workflow.</p>
+    </div>
+
     <div class="cs-nodes reveal" data-stagger>
       <div class="cs-node">
         <div class="cs-node-circle">
