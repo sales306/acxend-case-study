@@ -107,15 +107,33 @@
     font-family:'Inter',sans-serif;font-size:13px;color:var(--color-gray-500,#7a8393);
   }
 
-  /* ---- Image-only hero ---- */
-  .cs-hero-image{
-    padding-top:86px;          /* clears the fixed navigation bar */
-  }
-  .cs-hero-image img{
-    display:block;
+    /* ---- Image hero with overlaid breadcrumb ---- */
+  .cs-hero-image{ padding-top:86px; }            /* clears the fixed nav */
+  .cs-hero-frame{
+    position:relative;
     width:100%;
-    height:auto;
+    height:clamp(300px,44vh,470px);              /* hero height — lower this number = smaller image */
+    overflow:hidden;
   }
+  .cs-hero-frame img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:center;
+    display:block;
+  }
+  /* dark gradient at the top keeps the breadcrumb readable over the image */
+  .cs-hero-frame::before{
+    content:""; position:absolute; inset:0 0 auto 0; height:130px; z-index:1;
+    background:linear-gradient(180deg, rgba(6,20,52,.55), transparent);
+    pointer-events:none;
+  }
+  .cs-hero-crumbs{
+    position:absolute; top:0; left:0; right:0; z-index:2;
+    padding-top:22px;
+  }
+  .cs-hero-crumbs .crumbs{ color:rgba(255,255,255,.7); margin-bottom:0; }
+  .cs-hero-crumbs .crumbs a{ color:rgba(255,255,255,.85); }
+  .cs-hero-crumbs .crumbs a:hover{ color:#fff; }
+  .cs-hero-crumbs .crumbs [aria-current]{ color:#fff; }
      
   /* ---- Perfectly-centered section body ---- */
   .cs-centered{
@@ -325,18 +343,22 @@
 
 <!-- ============== PAGE HERO (image only) ============== -->
 <section class="cs-hero-image" aria-label="Case study hero">
-  <div class="container">
-    <nav class="crumbs" aria-label="Breadcrumb" style="margin-bottom:24px;color:var(--slate);">
-      <a href="index.html" style="color:var(--slate);">Home</a>
-      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <a href="case-studies.html" style="color:var(--slate);">Case Studies</a>
-      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span aria-current="page" style="color:var(--royal);">Energy &amp; Battery Storage</span>
-    </nav>
+  <div class="cs-hero-frame">
+    <img
+      src="images/Case%20Study%20-%20Near%20Real-Time%20Incident%20Response%20for%20a%20European%20Energy%20Trading%20and%20Battery%20Storage%20Provider.png"
+      alt="Near Real-Time Incident Response for a European Energy Trading and Battery Storage Provider" />
+    <div class="cs-hero-crumbs">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="case-studies.html">Case Studies</a>
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span aria-current="page">Energy &amp; Battery Storage</span>
+        </nav>
+      </div>
+    </div>
   </div>
-  <img
-    src="images/Case%20Study%20-%20Near%20Real-Time%20Incident%20Response%20for%20a%20European%20Energy%20Trading%20and%20Battery%20Storage%20Provider.png"
-    alt="Near Real-Time Incident Response for a European Energy Trading and Battery Storage Provider" />
 </section>
 
 <!-- ============== KEY RESULTS STAT STRIP ============== -->
