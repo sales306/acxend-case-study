@@ -216,6 +216,7 @@
   width: max-content;
   animation: scrollStats 30s linear infinite; 
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .cs-stat-strip:hover {
@@ -277,4 +278,15 @@
 .cs-stat-strip-wrapper::after {
   right: 0;
   background: linear-gradient(to left, var(--cloud), transparent);
+}
+
+@media (max-width: 768px) {
+  .cs-stat-strip {
+    gap: 32px;
+  }
+
+  .cs-stat {
+    min-width: 200px;
+    padding: 20px;
+  }
 }
