@@ -43,20 +43,11 @@
     margin-bottom:18px;
   }
   .cs-stat-strip{
-  display:flex;
-  gap:40px;
-
-  background:var(--color-border,#e7e9ee);
-  border:1px solid var(--color-border,#e7e9ee);
-  border-radius:16px;
-  overflow:hidden;
-
-  animation: scrollStats 20s linear infinite;
-}
-@keyframes scrollStats {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+    display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+    background:var(--color-border,#e7e9ee);
+    border:1px solid var(--color-border,#e7e9ee);
+    border-radius:16px;overflow:hidden;
+  }
   .cs-stat{
     background:#fff;padding:32px 20px;text-align:center;
     display:flex;flex-direction:column;gap:8px;
@@ -191,14 +182,13 @@
        Case-Study-Video.mp4 asset (already used on case-studies.html) fixes
        the collapse until a dedicated energy-page video is uploaded. -->
   <div class="page-hero-media" aria-hidden="true">
-  <img
-    class="page-hero-image"
-    src="https://github.com/sales306/acxend-case-study/blob/main/images/Case%20Study%20-%20Near%20Real-Time%20Incident%20Response%20for%20a%20European%20Energy%20Trading%20and%20Battery%20Storage%20Provider.png?raw=true"
-    alt="Case Study Hero"
-    loading="eager"
-    decoding="async"
-  />
-</div>
+    <video
+      class="page-hero-video"
+      autoplay muted loop playsinline
+      preload="auto">
+      <source src="Case-Study-Video.mp4" type="video/mp4" />
+    </video>
+  </div>
   <div class="page-hero-overlay" aria-hidden="true"></div>
 
   <div class="container page-hero-inner">
@@ -225,53 +215,26 @@
 <!-- ============== KEY RESULTS STAT STRIP ============== -->
 <section class="section section--tight">
   <div class="container">
-    <div class="cs-stat-strip-wrapper">
-      <div class="cs-stat-strip">
-
-        <!-- ORIGINAL -->
-        <div class="cs-stat">
-          <span class="cs-stat-num">95%</span>
-          <span class="cs-stat-label">Reduction in incident notification delays</span>
-        </div>
-        <div class="cs-stat">
-          <span class="cs-stat-num">Near real-time</span>
-          <span class="cs-stat-label">Ticket creation and customer alerting</span>
-        </div>
-        <div class="cs-stat">
-          <span class="cs-stat-num">$20,000</span>
-          <span class="cs-stat-label">Potential losses avoided per critical asset incident</span>
-        </div>
-        <div class="cs-stat">
-          <span class="cs-stat-num">Faster</span>
-          <span class="cs-stat-label">Customer response and issue resolution times</span>
-        </div>
-        <div class="cs-stat">
-          <span class="cs-stat-num">Scalable</span>
-          <span class="cs-stat-label">Framework supporting a growing asset portfolio</span>
-        </div>
-
-        <!-- DUPLICATE -->
-        <div class="cs-stat">
-          <span class="cs-stat-num">95%</span>
-          <span class="cs-stat-label">Reduction in incident notification delays</span>
-        </div>
-        <div class="cs-stat">
-          <span class="cs-stat-num">Near real-time</span>
-          <span class="cs-stat-label">Ticket creation and customer alerting</span>
-        </div>
-        <div class="cs-stat">
-          <span class="cs-stat-num">$20,000</span>
-          <span class="cs-stat-label">Potential losses avoided per critical asset incident</span>
-        </div>
-        <div class="cs-stat">
-          <span class="cs-stat-num">Faster</span>
-          <span class="cs-stat-label">Customer response and issue resolution times</span>
-        </div>
-        <div class="cs-stat">
-          <span class="cs-stat-num">Scalable</span>
-          <span class="cs-stat-label">Framework supporting a growing asset portfolio</span>
-        </div>
-
+    <div class="cs-stat-strip reveal" data-stagger>
+      <div class="cs-stat">
+        <span class="cs-stat-num">95%</span>
+        <span class="cs-stat-label">Reduction in incident notification delays</span>
+      </div>
+      <div class="cs-stat">
+        <span class="cs-stat-num">Near real-time</span>
+        <span class="cs-stat-label">Ticket creation and customer alerting</span>
+      </div>
+      <div class="cs-stat">
+        <span class="cs-stat-num">$20,000</span>
+        <span class="cs-stat-label">Potential losses avoided per critical asset incident</span>
+      </div>
+      <div class="cs-stat">
+        <span class="cs-stat-num">Faster</span>
+        <span class="cs-stat-label">Customer response and issue resolution times</span>
+      </div>
+      <div class="cs-stat">
+        <span class="cs-stat-num">Scalable</span>
+        <span class="cs-stat-label">Framework supporting a growing asset portfolio</span>
       </div>
     </div>
   </div>
